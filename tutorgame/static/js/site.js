@@ -1,3 +1,33 @@
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+
+
 /*------------------------Declare Variables------------------*/
 
 // Declares the size of various stats: the four main buttons, costs for
@@ -91,9 +121,15 @@ $("#pic_speed").click(function() {
 });
 // }}
 
-$(".card_button").click(function() {
+$("#study20").click(function() {
     $(".flashcard").css('display', 'flex');
-/*    $("#overcard").html('<div id="overcard-question" class="qna">aaaaaaaaaaaaa</div> <form action="http://www.example.com/comments.php">aaa<div id="overcard-answer" class="qna"><input type="textarea" name="answer_guess" rows="4">abab</textarea></form></div>'); */
+    $.ajax({url: "question_part_1", success: function(result){
+            $("#overcard-question").html(result);
+        }})
+}); 
+
+$("#test80").click(function() {
+    $(".flashcard").css('display', 'flex');
 }); 
 
 
