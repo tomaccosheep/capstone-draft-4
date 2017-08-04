@@ -1,0 +1,8 @@
+.Move everything over to Django
+...Make a new Django instance
+
+
+.make an account save
+
+
+.re-do game

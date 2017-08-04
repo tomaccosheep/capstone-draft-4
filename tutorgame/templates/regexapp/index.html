@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <link rel='stylesheet' href='{% static "css/style.css" %}'>
+</head>
+<body>
+
+<!-- This is where all the html and css is
+injected to create a flashcard over the game -->
+<div id='overcard-container' class='nodisp flashcard'>
+    <img id='overwhite' class='nodisp flashcard' src="{% static 'img/white.png' %}"/>
+    <div id='overcard' class='nodisp flashcard'>
+        <div id='overcard-question' class='qna nodisp flashcard'>Question Here
+        </div>
+        <div id='overcard-answer' class='qna nodisp flashcard'>
+        <form action='http://www.example.com/comments.php'><div id='overcard-answer' class='qna nodisp flashcard'>
+            <input type='textarea' name='answer_guess' class='nodisp flashcard' cols='20' rows='4'>
+            </input>
+        </form>
+        <button type='button' value='cardFinished' class='cardFinished'>Finished</button>
+        </div>
+    </div>
+    </div>
+</div>
+
+<h1>Clicker</h1>
+
+<!-- This is the list of point stats
+that are changed when you click -->
+<div id='topdiv' class='statElementDiv rowdiv'>
+<div id='points' class='statElement'><div id='stat1'>Points&nbsp;</div><div id='stat2'>0</div></div>
+<div id='size' class='statElement'>Click size: 1</div>
+<div id='machines' class='statElement'>Machines: 0</div>
+<div id='speed' class='statElement'>Speed: 100%</div>
+</div>
+
+<!-- This is a series of divs with pictures
+that represent buttons -->
+<div class='rowdiv'>
+<div id='pic_point' class='rowElement nosel'><img class='imgscale' src="{% static 'img/point.jpg' %}" width="100%" /></div>
+<div id='pic_size' class='rowElement nosel'><img src="{% static 'img/size.jpg' %}" width="100%"/></div>
+<div id='pic_machine' class='rowElement nosel'><img src="{% static 'img/machine.jpg' %}" width="100%"/></div>
+<div id='pic_speed' class='rowElement nosel'><img src="{% static 'img/speed.jpg' %}" width="100%"/></div>
+</div>
+
+<!-- This is a list of prices for the corresponding buttons -->
+<div id='pricediv' class='rowdiv'>
+<div id='price_points' class='statElement'>Free</div>
+<div id='price_size' class='statElement'>Cost: 1 point</div>
+<div id='price_machines' class='statElement'>Cost: 1 point</div>
+<div id='price_speed' class='statElement'>Cost: 1 point</div>
+</div>
+
+<div id='collecting'>Reserved machines: 0</div>
+
+<!-- Two buttons to bring up flashcards, one brings up
+homework and the other brings up test questions -->
+<div class='carddiv'>
+<div id='study20' class='card_button nosel'>Study for 20% of reserved machines</div>
+<div id='test80' class='card_button nosel'>Test for 80% of reserved machines</div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{% static 'js/site.js' %}"></script>
+
+</body>
+</html>
+
+
+
+
