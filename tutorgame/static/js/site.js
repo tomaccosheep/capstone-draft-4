@@ -125,6 +125,8 @@ $("#study20").click(function() {
     $(".flashcard").css('display', 'flex');
     $.ajax({url: "question_part_1", success: function(result){
             $("#overcard-question").html(result);
+            console.log(result);
+            console.log('a');
         }})
 }); 
 

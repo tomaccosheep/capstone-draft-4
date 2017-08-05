@@ -6,5 +6,6 @@ def index(request):
     return render(request, 'regexapp/index.html', context=context_dict)
 
 def question_part_1(request):
-    return "This is a message from views."
+    data = {'viewmessage': 'this is a message from views.py'}
+    return JsonResponse(data)
 # Create your views here.
