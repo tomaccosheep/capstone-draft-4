@@ -22,4 +22,9 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^regexapp', include('regexapp.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^ajax/question_hw', views.question_hw, name='question_hw'),
+    url(r'new_game/$', views.new_game, name='new_game'),
+    url(r'^index/(?P<game_id>[\w]+)/$', views.index, name='game'),
+
+    #url(r'^ajax/check_homework', views.check_homework, name='check_homework'),
 ]

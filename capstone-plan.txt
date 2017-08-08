@@ -1,8 +1,16 @@
-.Move everything over to Django
-...Make a new Django instance
+.make everything based on adding users
+...Look at examples of making users
+...Make views access models based on username
 
-
-.make an account save
-
+.expand flashcards
 
 .re-do game
+...copy and paste 
+
+
+I can't tell how to create a model around a primary key. Maybe it needs to exist in the model itself, or maybe it should be in views. Do I need to visualize how the key/model relationship will work?
+
+I can generate a random string in views or models. Generating one in models would allow the 
+
+to do
+.make a new url input

@@ -28,6 +28,13 @@ $.ajaxSetup({
 });
 
 
+
+
+
+
+
+
+
 /*------------------------Declare Variables------------------*/
 
 // Declares the size of various stats: the four main buttons, costs for
@@ -123,8 +130,8 @@ $("#pic_speed").click(function() {
 
 $("#study20").click(function() {
     $(".flashcard").css('display', 'flex');
-    $.ajax({url: "question_hw", success: function(result){
-            $("#overcard-question").html(result);
+    $.ajax({url: "/ajax/question_hw/", success: function(result){
+            $("#overcard-question").html(result.repeat_me);
         }})
 }); 
 
@@ -136,6 +143,12 @@ $("#test80").click(function() {
 
 $(".cardFinished").click(function() {
     $(".flashcard").css('display', 'none');
+    $("#overcard-question").html(' ');
+    $.ajax({url: "/ajax/check_homework/", success: function(result){
+        if (result.repeated === true) {
+            console.log('add machines');
+        }
+    }});
 }); 
 
 updateSpeed = setInterval(update, 10);
