@@ -109,7 +109,7 @@ $("#clickobj").hover(function() {
 
 
 $("#vegobj").hover(function() {
-    $("#infodiv").html("Does eating vegetables increase your well-being?<br />Cost: $" + veg_cost_money);
+    $("#infodiv").html("Does eating vegetables increase your well-being?<br />Cost: $" + (Math.round(veg_cost_money);
     }, function(){ $("#infodiv").html(" ");
 });    
 
@@ -168,36 +168,70 @@ $("#clickobj").click(function() {
 }); 
 
 $("#vegobj").click(function() {
-    veg += 1;
-    $("#vegobj").html("Buy Vegetable (" + Math.round(veg - 1) + ")");
-    well_being += (veg/(.95*veg))*pizza;
-    $("#wellnum").html((Math.round(well_being * 100)/100));
+    if (money >= veg_cost_money) {
+        veg += 1;
+        $("#vegobj").html("Buy Vegetable (" + Math.round(veg - 1) + ")");
+        well_being += (veg/(.95*veg))*pizza;
+        $("#wellnum").html((Math.round(well_being * 100)/100));
+        money -= veg_cost_money;
+        veg_cost_money *= 95;
+        $("#infodiv").html("Does eating vegetables increase your well-being?<br />Cost: $" + (Math.round(veg_cost_money * 100)/100));
+        $("#moneynum").html((Math.round(money * 100)/100));
+    }
+
 }); 
 
 $("#pizzaobj").click(function() {
-    pizza += 1;
-    $("#pizzaobj").html("Buy Pizza (" + Math.round(pizza - 1) + ")");
-    well_being += ((veg/(.99*veg))*pizza);
-    console.log(well_being);
-    $("#wellnum").html((Math.round(well_being * 100)/100));
+    if (money >= pizza_cost_money) {
+        pizza += 1;
+        $("#pizzaobj").html("Buy Pizza (" + Math.round(pizza - 1) + ")");
+        well_being += ((veg/(.99*veg))*pizza);
+        $("#wellnum").html((Math.round(well_being * 100)/100));
+        money -= pizza_cost_money;
+        pizza_cost_money *= 1.13;
+        $("#infodiv").html("Does eating pizza increase your well-being?<br />Cost: $" + (Math.round(pizza_cost_money)));
+        $("#moneynum").html((Math.round(money * 100)/100));
+    }
 }); 
 
 $("#pizzarobj").click(function() {
-    pizzar += 1;
-    $("#pizzarobj").html("Buy Pizza Restaurant (" + Math.round(pizzar) + ")");
+    if (money >= pizzar_cost_money) {
+        pizzar += 1;
+        $("#pizzarobj").html("Buy Pizza Restaurant (" + Math.round(pizzar) + ")");
+        money -= pizzar_cost_money;
+        pizzar_cost_money *= 1.13;
+        $("#infodiv").html("Your very own pizza restaurant! It's sure to bring money and popularity!<br />Cost: $" + (Math.round(pizzar_cost_money * 100)/100));
+        $("#moneynum").html((Math.round(money * 100)/100));
+    }
 }); 
 
 $("#shoeobj").click(function() {
-    shoe += 2;
-    $("#shoeobj").html("Buy Cool Shoes (" + Math.round(shoe) + ")");
-    popularity += 10;
-    $("#popnum").html(popularity);
+    if (money >= shoes_cost_money) {
+        shoe += 2;
+        $("#shoeobj").html("Buy Cool Shoes (" + Math.round(shoe) + ")");
+        popularity += 10;
+        $("#popnum").html(popularity);
+        money -= shoes_cost_money;
+        shoes_cost_money *= 1.37;
+        $("#infodiv").html("Cool shoes immediately make people more popular!<br />Cost: $" + (Math.round(shoes_cost_money * 100)/100));
+        $("#moneynum").html((Math.round(money * 100)/100));
+    }
 }); 
 
 
 $("#dateobj").click(function() {
+    if ((money >= partner_cost_money) && (popularity >= partner_cost_pop)) {
     partner += 1;
     $("#dateobj").html("Get Dating Partner (" + Math.round(partner) + ")");
+    money -= partner_cost_money;
+    popularity -= partner_cost_pop;
+    partner_cost_money *= 1.09;
+    partner_cost_pop *= 30;
+    well_being += 50;
+    $("#popnum").html(popularity);
+    $("#infodiv").html("Increases your popularity, and gives a short-term boost to well-being. Dating is more effective if you're already popular.<br />Cost: $" + (Math.round(partner_cost_money * 100)/100) + " and " + (Math.round(partner_cost_pop * 100)/100) + " popularity.");
+        $("#moneynum").html((Math.round(money * 100)/100));
+    }
 }); 
 
 
