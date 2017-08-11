@@ -142,7 +142,7 @@ main four buttons */
 
 /*------------------------Misc------------------*/
 #collecting {
-    margin-top: 50px;
+    /*margin-top: 50px;*/
 }
 
 /* This is used to make text
@@ -158,3 +158,43 @@ and pictures unselectable */
     cursor: pointer;
 }
 /* }} */
+
+#save {
+    width: 25%;
+    text-align: center;
+}
+
+#colcontainer {
+    display: flex;
+}
+
+.maincol {
+    display: flex;
+    flex-direction: column;
+    border: double;
+    width: 40%;
+}
+
+#statdiv {
+    width: 20%;
+}
+
+.object {
+    text-align: center;
+}
+
+.stat {
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+#stat1 {
+    text-align: right;
+    flex-shrink: 5;
+}
+
+#stat2 {
+    text-align: left;
+    flex-grow: 5;
+}

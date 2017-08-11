@@ -1,6 +1,5 @@
-.make everything based on adding users
-...Look at examples of making users
-...Make views access models based on username
+.make a save system
+...make a save() button
 
 .expand flashcards
 
@@ -14,3 +13,24 @@ I can generate a random string in views or models. Generating one in models woul
 
 to do
 .make a new url input
+
+.figure out how everything will be connected
+...Make an excel file?
+...Make a mind map?
+
+Add Stuff:
+.add well-being stat
+...make it never be a price
+...Make it be based on dating partners
+.add Dating Partners
+...Make them cost popularity and money
+...Make them give a short boost to well-being
+.make babysit clicker
+...Make it increase popularity
+.add Pizza Restaurant object
+...Make it cost money
+......Make it provide money, popularity
+.Make pizza object
+...Multiply by vegetables to add to well-being
+.Make vegetable object
+...Make it vegetables / .95 * vegetables

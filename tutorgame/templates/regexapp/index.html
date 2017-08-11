@@ -25,43 +25,61 @@ injected to create a flashcard over the game -->
     </div>
 </div>
 
-<h1>Clicker</h1>
+<h1>High School CS Tutor</h1>
+<div id='colcontainer'>
+    <div id='statdiv' class='maincol'>
+        <div id='wellstat' class='stat'>
+            <div class='stat1'>Well-being:&nbsp;</div>
+            <div id='wellnum' class='stat2'>0</div>
+        </div>
+        <hr />
+        <div id='moneystat' class='stat'>
+            <div class='stat1'>Money:&nbsp;</div>
+            <div id='moneynum' class='stat2'>0</div>
+        </div>
+        <hr />
+        <div id='popstat' class='stat'>
+            <div class='stat1'>Popularity:&nbsp;</div>
+            <div id='popnum' class='stat2'>0</div>
+        </div>
+        <hr />
+    </div>
+    
+    
+    <div id='buydiv' class='maincol'>
+        <div id='clickobj' class='object card_button nosel'>
+            Babysit (Gain $)
+        </div>
+        <div id='vegobj' class='object card_button nosel'>
+            Buy Vegetable (0)
+        </div>
+        <div id='pizzaobj' class='object card_button nosel'>
+            Buy Pizza (0)
+        </div>
+        <div id='pizzarobj' class='object card_button nosel'>
+            Buy Pizza Restaurant (0)
+        </div>
+        <div id='shoeobj' class='object card_button nosel'>
+            Buy Cool Shoes (0)
+        </div>
+        <div id='dateobj' class='object card_button nosel'>
+            Get Dating Partner (0)
+        </div>
+    </div>
 
-<!-- This is the list of point stats
-that are changed when you click -->
-<div id='topdiv' class='statElementDiv rowdiv'>
-<div id='points' class='statElement'><div id='stat1'>Points&nbsp;</div><div id='stat2'>0</div></div>
-<div id='size' class='statElement'>Click size: 1</div>
-<div id='machines' class='statElement'>Machines: 0</div>
-<div id='speed' class='statElement'>Speed: 100%</div>
+    <div id='infodiv' class='maincol'>
+
+    </div>
 </div>
 
-<!-- This is a series of divs with pictures
-that represent buttons -->
-<div class='rowdiv'>
-<div id='pic_point' class='rowElement nosel'><img class='imgscale' src="{% static 'img/point.jpg' %}" width="100%" /></div>
-<div id='pic_size' class='rowElement nosel'><img src="{% static 'img/size.jpg' %}" width="100%"/></div>
-<div id='pic_machine' class='rowElement nosel'><img src="{% static 'img/machine.jpg' %}" width="100%"/></div>
-<div id='pic_speed' class='rowElement nosel'><img src="{% static 'img/speed.jpg' %}" width="100%"/></div>
-</div>
-
-<!-- This is a list of prices for the corresponding buttons -->
-<div id='pricediv' class='rowdiv'>
-<div id='price_points' class='statElement'>Free</div>
-<div id='price_size' class='statElement'>Cost: 1 point</div>
-<div id='price_machines' class='statElement'>Cost: 1 point</div>
-<div id='price_speed' class='statElement'>Cost: 1 point</div>
-</div>
-
-<div id='collecting'>Reserved machines: 0</div>
-
-<!-- Two buttons to bring up flashcards, one brings up
-homework and the other brings up test questions -->
+<hr />
+<div id='collecting'>CS Tutor Demand: 0</div>
 <div class='carddiv'>
-<div id='study20' class='card_button nosel'>Study for 20% of reserved machines</div>
-<div id='test80' class='card_button nosel'>Test for 80% of reserved machines</div>
+<div id='study20' class='card_button nosel'>Study for 20% of demand as $</div>
+<div id='test80' class='card_button nosel'>Test for 80% of demand as $</div>
 </div>
-
+<hr />
+<div id='save' class='card_button nosel'>Save game</div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="{% static 'js/site.js' %}"></script>
 
