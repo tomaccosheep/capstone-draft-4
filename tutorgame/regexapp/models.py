@@ -29,7 +29,8 @@ class Card_Manager(models.Model):
     nodelist.append(single_char_node)
     space_node = card_nodes.Card_Node('space', 'In regex, \s catches a space')
     nodelist.append(space_node)
-    unique_id=models.CharField(max_length=32)
+    def_id = get_random_string(length=32)
+    unique_id = models.CharField(max_length=32, primary_key=True, default=def_id)
     # }}
 
     # randomly chooses a card node, returns the

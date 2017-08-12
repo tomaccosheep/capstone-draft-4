@@ -109,29 +109,29 @@ $("#clickobj").hover(function() {
 
 
 $("#vegobj").hover(function() {
-    $("#infodiv").html("Does eating vegetables increase your well-being?<br />Cost: $" + (Math.round(veg_cost_money);
+    $("#infodiv").html("Does eating vegetables increase your well-being?<br />Cost: $" + (Math.round(veg_cost_money * 100)/100));
     }, function(){ $("#infodiv").html(" ");
 });    
 
 
 $("#pizzaobj").hover(function() {
-    $("#infodiv").html("Does eating pizza increase your well-being?<br />Cost: $" + pizza_cost_money);
+    $("#infodiv").html("Does eating pizza increase your well-being?<br />Cost: $" + (Math.round(pizza_cost_money * 100)/100));
     }, function(){ $("#infodiv").html(" ");
 });    
 
 $("#pizzarobj").hover(function() {
-    $("#infodiv").html("Your very own pizza restaurant! It's sure to bring money and popularity!<br />Cost: $" + pizzar_cost_money);
+    $("#infodiv").html("Your very own pizza restaurant! It's sure to bring money and popularity!<br />Cost: $" + (Math.round(pizzar_cost_money * 100)/100));
     }, function(){ $("#infodiv").html(" ");
 });    
 
 $("#shoeobj").hover(function() {
-    $("#infodiv").html("Cool shoes immediately make people more popular!<br />Cost: $" + shoes_cost_money);
+    $("#infodiv").html("Cool shoes immediately make people more popular!<br />Cost: $" + (Math.round(shoes_cost_money * 100)/100));
     }, function(){ $("#infodiv").html(" ");
 });    
 
 
 $("#dateobj").hover(function() {
-    $("#infodiv").html("Increases your popularity, and gives a short-term boost to well-being. Dating is more effective if you're already popular.<br />Cost: $" + partner_cost_money + " and " + partner_cost_pop + " popularity.");
+    $("#infodiv").html("Increases your popularity, and gives a short-term boost to well-being. Dating is more effective if you're already popular.<br />Cost: $" + (Math.round(partner_cost_money * 100)/100) + " and " + (Math.round(partner_cost_pop * 100)/100) + " popularity.");
     }, function(){ $("#infodiv").html(" ");
 });    
 
@@ -275,7 +275,9 @@ $("#pic_speed").click(function() {
 */
 $("#study20").click(function() {
     $(".flashcard").css('display', 'flex');
-    $.ajax({url: "/ajax/question_hw/", success: function(result){
+	var my_url = window.location.href;
+	my_key = (my_url.split("index")[1]).split('/')[1]
+    $.ajax({url: "/ajax/question_hw/" + my_key, success: function(result){
             $("#overcard-question").html(result.repeat_me);
         }})
 }); 

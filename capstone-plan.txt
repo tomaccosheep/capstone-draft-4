@@ -1,15 +1,10 @@
 .make a save system
 ...make a save() button
-
-.expand flashcards
-
-.re-do game
-...copy and paste 
+...Look at how models.py and js interact
+......Transcribe parts of js and models.py
 
 
-I can't tell how to create a model around a primary key. Maybe it needs to exist in the model itself, or maybe it should be in views. Do I need to visualize how the key/model relationship will work?
 
-I can generate a random string in views or models. Generating one in models would allow the 
 
-to do
-.Make the prices in the hover change when you click
+
+
